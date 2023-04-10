@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET'S PLAY</title>
+
+<STYLE>
+    body{
+        background-image: url('backgrounf.jpg');
+        background-size: cover;
+    }
+    tr td{
+        border: 2px solid;
+        width: 200px;
+        text-align: center;
+
+    }
+    table{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+        
+        font-size: 60px;
+        color: rgb(28, 246, 9);
+
+    }
+    .container{
+        display: flex;
+       justify-content: space-between;
+       margin-top: 5%;
+    }
+    /* img:hover{
+        transform: scale(1.2);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    } */
+    .none{
+        border: none;
+    }
+     #id{
+        margin-left: 600px;
+        
+    } 
+     #image-container{
+        margin-right: 600px;
+        
+    } 
+    .total{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #yes,#nom,#robot,.robot{
+        border: none;
+        color: rgb(160, 33, 148);
+        font-size:55px ;
+       font-weight:bolder;
+       
+    }
+    #score_user,#score_robot{
+        color: blue;
+        font-size: 35px;
+        font-weight: bolder;
+        background-color: greenyellow;
+    }
+    .none{
+        border:none;
+    }
+    button{
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+        width: 200px;
+        height: 100px;
+        background-color: rgb(64, 244, 244);
+        color: #000;
+        font-size: 30px;
+        font-weight: bolder;
+        border-radius: 10%;
+    }
+    button:hover{
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+    }
+</STYLE>
+</head>
+<body>
+    <button onclick="changer()">CHANGER</button>
+    <audio autoplay loop>
+        <source src="loop.mp3" type="audio/mpeg">
+       
+      </audio>
+      
+    <h1>SCORE</h1>
+    <table>
+
+        <tr>
+            <td id="nom">YOU</td>
+            <td id="robot">robot</td>
+        </tr>
+        <tr>
+            <td id="score_user" class="none" >0</td>
+            <td id="score_robot" class="none">0</td>
+        </tr>
+    </table>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="3" id="yes">YOU</td>
+
+            </tr>
+            <tr>
+
+                    <tr>
+                        <td class="none" onclick="picture()"><img src="rock.PNG" alt=""></td>
+                        <td class="none" onclick="picture()"><img src="cisor.PNG" alt=""></td>
+                        <td class="none" onclick="picture()"><img src="paper.PNG" alt=""></td>
+                    </tr>
+
+
+           </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="3" class="robot" >robot</td>
+
+            </tr>
+            <tr>
+
+                <tr>
+                    <td class="none"><img src="cisor.PNG" alt=""></td>
+                    <td class="none"><img src="paper.PNG" alt=""></td>
+                    <td class="none"><img src="rock.PNG" alt=""></td>
+                </tr>
+
+
+       </tr>
+        </table>
+
+    </div>
+    <div class="total">
+    <div id="id"></div>
+    <div id="image-container"></div>
+    
+</div>
+    <script>
+        function changer(){
+            var a=Math.floor(Math.random()*100);
+            var b=Math.floor(Math.random()*100);
+            var c=Math.floor(Math.random()*100);
+            document.body.style.background=`rgb(${a},${b},${c}`;
+        }
+        var nom = localStorage.getItem("nom");
+
+        var c = nom;
+
+		document.getElementById("nom").innerHTML = nom;
+		document.getElementById("yes").innerHTML = c;
+		
+
+var score=0;
+var scoree=0;
+        function picture(){
+            var imgSrc = event.target.getAttribute('src');
+            // condition sur le choix d'utilisateur 
+  if (imgSrc === 'paper.PNG') {
+    document.getElementById('id').innerHTML = '<img src="paper.PNG" >';
+  }
+
+  if (imgSrc === 'cisor.PNG') {
+    document.getElementById('id').innerHTML = '<img src="cisor.PNG" >';
+  }
+
+  if (imgSrc === 'rock.PNG') {
+    document.getElementById('id').innerHTML = '<img src="rock.PNG" >';
+  }
+
+// var score=document.getElementById('score_user').value;
+// console.log(score)
+// var scoree=document.getElementById('score_robot').value;
+  const images = [ "paper.PNG",   "cisor.PNG",     "rock.PNG" ];
+
+  const index = Math.floor(Math.random() * images.length);
+ 
+   let a=  images[index];
+
+ document.getElementById("image-container").innerHTML = `<img src="${a}" alt="Image aléatoire">`;
+// ------------------
+
+if( imgSrc==='paper.PNG' && index===2) { 
+    
+   score++;
+   document.getElementById("score_user").innerHTML=score;
+   
+  }
+if( imgSrc==='paper.PNG' && index===1) { 
+    
+   scoree++;
+   document.getElementById("score_robot").innerHTML=scoree;
+  }
+if( imgSrc==='cisor.PNG' && index===2) { 
+    
+   scoree++;
+   document.getElementById("score_robot").innerHTML=scoree;
+  }
+if( imgSrc==='cisor.PNG' && index===0) { 
+    
+   score++;
+   document.getElementById("score_user").innerHTML=score;
+  }
+if( imgSrc==='rock.PNG' && index===0) { 
+    
+   scoree++;
+   document.getElementById("scor_robot").innerHTML=scoree;
+  }
+if( imgSrc==='rock.PNG' && index===1) { 
+    
+   score++;
+   document.getElementById("score_user").innerHTML=score;
+  }
+ 
+  
+    }
+
+
+    </script>
+
+</body>
+</html>

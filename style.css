@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;600&family=Kanit:ital,wght@1,100&display=swap');
+body{
+    background-image: url(picture1.jpg);
+    background-size: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    color: #ffffff;
+   
+    
+}
+h1{
+    color: rgb(218, 131, 17);
+    font-size: 50px;
+}
+p{
+    margin-left: 0px;
+    margin-top: 10px;
+    color: rgb(11, 218, 21);
+    font-size: 20px;
+}
+.jj{
+    margin-left: 450px;
+}
+.yt{
+    color: rgb(24, 73, 180);
+   font-size: 50px;
+    margin-top: 50px;
+    border-radius: 20%;
+    font-weight: bolder;
+    text-shadow: 8px 8px 0 8px rgb(218, 131, 17);
+    text-align: center;
+}
+.container{
+    border: 5px solid rgb(215, 236, 25);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 600px;
+    margin-top: 7%;
+    /* justify-content: center; */
+   margin-left: 20%;
+}
+#nom,#nn{
+    background-color: transparent;
+    height: 100px;
+    font-size: 60px;
+}
+
+
+button{
+    background-color: palegreen;
+    color: rgb(20, 18, 175);
+    font-weight: bolder;
+    width: 30%;
+    height: 40px;
+    margin-left: 35%;
+    border-radius: 5%;
+    margin-bottom: 2%;
+    font-size: 30px;
+}
+#kk{
+    color: rgb(34, 241, 15);
+    font-size: 50px;
+    margin-top: 50px;
+    border-radius: 20%;
+    font-weight: bolder;
+    text-shadow: 8px 8px 0 8px rgb(218, 131, 17);
+    text-align: center;
+}
+span{
+    background-color: rgb(212, 103, 14);
+    color: black;
+    font-size: 45px;
+    margin-top: 5px;
+   
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bonjour</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;600&family=Kanit:ital,wght@1,100&display=swap');
+body{
+    background-image: url(image2.jpg);
+    background-size: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    color: #ffffff;
+    font-size: 30px;
+}
+h1 , span{
+    font-size:100px ;
+    text-align: center;
+    margin-top: 35px;
+    text-decoration: underline double BLACK;
+    color: green;
+    text-shadow: 2px 2px yellow;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    
+    margin-bottom: 50px;
+}
+img{
+    width: 500px;
+    height: 500px;
+   
+}
+ul li{
+    list-style-type: none;
+}
+ul li h1{
+    list-style-type: none;
+    margin-left: 250px;
+}
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 15px solid green;
+    
+}
+#check{
+    width: 70px;
+    height: 40px;
+}
+button{
+    margin-left: 80%;
+    background-color: green;
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: black;
+}
+H3{
+    margin-left: 2REM;
+}
+button:hover{
+    background-color: transparent;
+}
+#nom{
+    color: red;
+    
+}
+</style>
+<body>
+    <ul>
+        <li><img src="hide.png " alt=""></li>
+         <li><h1>Hello <span id="nom"></span> !</h1></li>
+</ul>
+	
+    <div class="container">
+        <h3>Let's start Our Game</h3>
+        <input type="checkbox" id="check"> <span>play aiginst robot</span><br><br><br>
+        <button class="go">go</button>
+    </div>
+	<script>
+		var nom = localStorage.getItem("nom");
+		document.getElementById("nom").innerHTML = nom;
+        const checkbox = document.getElementById('check');
+    const goBtn = document.querySelector('.go');
+    
+    goBtn.addEventListener('click', () => {
+        if (!checkbox.checked) {
+            alert("please we can only start if you  check-it");
+        } else{
+            window.location.href="score.html";
+        }
+    });
+	</script>
+</body>
+</html>
